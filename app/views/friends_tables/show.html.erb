@@ -1,0 +1,12 @@
+<div class="p-5 mb-4 bg-light border rounded-3">
+      <div class="container-fluid py-5">
+        <h1 class="display-5 fw-bold"><%= @friends_table.first_name %>  <%= @friends_table.last_name %></h1>
+        <p class="col-md-8 fs-4"><%= @friends_table.email %> | <%= @friends_table.phone %> | <%= @friends_table.twitter %></p>
+        <br/>
+        <hr/>
+        <%= link_to 'Edit', edit_friends_table_path(@friends_table),class:"btn btn-secondary" %> 
+        <%= link_to 'Back', friends_tables_path ,class:"btn btn-secondary"%>
+      </div>
+    </div>
+
+

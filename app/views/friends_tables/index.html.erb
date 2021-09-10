@@ -1,0 +1,34 @@
+<h1>Friends Tables</h1>
+<table class="table table-striped table-bordered table-hover">
+    <thead class="table-dark">
+    <tr>
+      <th>First name</th>
+      <th>Last name</th>
+      <th>Email</th>
+      <th>Phone</th>
+      <th>Twitter</th>
+      <th>Owner</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @friends_tables.each do |friends_table| %>
+      <tr>
+        <td><%= friends_table.first_name %></td>
+        <td><%= friends_table.last_name %></td>
+        <td><%= friends_table.email %></td>
+        <td><%= friends_table.phone %></td>
+        <td><%= friends_table.twitter %></td>
+        <td><%= friends_table.user_id %></td>
+        <td><%= link_to 'Show', friends_table %></td>
+        <td><%= link_to 'Edit', edit_friends_table_path(friends_table) %></td>
+        <td><%= button_to 'Destroy', friends_table, :method => :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Friend', new_friends_table_path,class:"btn btn-secondary" %>
